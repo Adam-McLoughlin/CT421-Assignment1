@@ -45,8 +45,8 @@ def generate_new_pop(strings):
     for i in range(elite_count):
         new_population.extend(crossover(elite_strings[i], elite_strings[(i + 1) % elite_count]))
         new_population.extend(crossover(elite_strings[i], elite_strings[(i + 2) % elite_count]))
-    for i in range(elite_count, population_size):  # Fix: start from elite_count
-        new_population.append(mutate(random.choice(strings)))  # Fix: append instead of assigning
+    for i in range(elite_count, population_size): 
+        new_population.append(mutate(random.choice(strings))) 
     calculate_fitnesses(new_population)
     return new_population
 
